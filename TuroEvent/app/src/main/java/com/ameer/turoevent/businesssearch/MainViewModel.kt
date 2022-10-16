@@ -1,19 +1,20 @@
-package com.ameer.turoevent
+package com.ameer.turoevent.businesssearch
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ameer.turoevent.networking.ApiService
 import com.example.example.Businesses
-import com.example.example.ExampleJson2KtKotlin
+import com.example.example.BusinessSearchApiResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class MainViewModel: ViewModel() {
-    lateinit var businessResponse: ExampleJson2KtKotlin
+    lateinit var businessResponse: BusinessSearchApiResponse
     var businessListResponse: List<Businesses> by mutableStateOf(listOf())
     var errorMessage: String by mutableStateOf("")
     fun getPizzaAndBeerList() {

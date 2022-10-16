@@ -1,8 +1,6 @@
-package com.ameer.turoevent
+package com.ameer.turoevent.businesssearch.ui
 
-import BusinessItem
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -11,6 +9,8 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.*
+import com.ameer.turoevent.businesssearch.BusinessItem
+import com.ameer.turoevent.businesssearch.MainViewModel
 import com.ameer.turoevent.ui.theme.TuroEventTheme
 import com.example.example.Businesses
 
@@ -20,7 +20,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TuroEventTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     color = MaterialTheme.colors.background
                 ) {

@@ -1,3 +1,5 @@
+package com.ameer.turoevent.businesssearch
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
@@ -33,14 +35,12 @@ fun BusinessItem(businesses: Businesses, index: Int, selectedIndex: Int, onClick
         Surface(color = backgroundColor) {
             Row(
                 horizontalArrangement = Arrangement.Start,
-                modifier = Modifier
-                    .padding(2.dp)
-                //.fillMaxSize()
+                modifier = Modifier.padding(2.dp)
+                .fillMaxSize()
             ) {
                 Image(painter = rememberImagePainter(data = businesses.imageUrl,
                     builder = {
                         scale(Scale.FIT)
-                        //placeholder(R.drawable.ic_launcher_background)
                         transformations(CircleCropTransformation())
                     }), contentDescription = null, contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -54,8 +54,8 @@ fun BusinessItem(businesses: Businesses, index: Int, selectedIndex: Int, onClick
                     .padding(120.dp, 2.dp)
                     .fillMaxWidth(),
             ) {
-                Text(text = businesses.name!!, style = MaterialTheme.typography.h6, maxLines = 3, overflow = TextOverflow.Ellipsis)
-                Text(text = businesses.rating.toString(), style = MaterialTheme.typography.h6)
+                Text(text = businesses.name!!, style = MaterialTheme.typography.h6, maxLines = 3, overflow = TextOverflow.Visible)
+                Text(text = "Rating: "+businesses.rating.toString(), style = MaterialTheme.typography.h6)
             }
         }
     }
