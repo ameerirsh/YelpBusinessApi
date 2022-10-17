@@ -6,12 +6,12 @@ import okhttp3.logging.HttpLoggingInterceptor
 class CustomOkHttpClient {
     val httpClient : OkHttpClient.Builder = OkHttpClient.Builder()
     val logging = HttpLoggingInterceptor()
-    public fun getOkHttpClient() : OkHttpClient{
+    fun getOkHttpClient() : OkHttpClient{
         logging.level = HttpLoggingInterceptor.Level.BODY
         httpClient.addInterceptor { chain ->
             val original = chain.request()
             val requestBuilder = original.newBuilder()
-                .header("Authorization", "Bearer 2ROaa2Rh9qu3WVTCms8FoVE4mSfHQHC7QJua95-kKT-PqzIlLSrs4tmHVdtdFw_66-JNfRiJmbCByHTvFNy5dQq-tpfS4FrPpupIzKlgELR3br-r5trpeFhrCRgwWnYx") // <-- this is the important line
+                .header("Authorization", "Bearer ICJIGQZBMC_rOUxTCUDIcGvI2Wt3_m_-U7RTiPg7vLlRBNGuE5AfUxmomx2HQaXtkjm4GptEb9sZnn2a8HfZ50VJMv2GRegSk9sjfHz9PP20lIht6TSAGiMA9BBNY3Yx") // <-- this is the important line
             val request = requestBuilder.build()
             chain.proceed(request)
         }
